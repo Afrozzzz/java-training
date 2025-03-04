@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>JavaScript Example</title>
+</head>
+<body>
+<h2>JavaScript Variable Scope Example</h2>
+<script>
+function example() {
+    var y = 10;
+    if (true) {
+        var y = 20;
+        console.log(y); // Output: 20
+    }
+    console.log(y); // Output: 20
+}
+example();
+ 
+ 
+//Arithmetic Operators
+let a = 10;
+let b = 5;
+ 
+console.log(`Addition: ${a + b}`); // 15
+console.log(`Subtraction: ${a - b}`); // 5
+console.log(`Multiplication: ${a * b}`); // 50
+console.log(`Division: ${a / b}`); // 2
+console.log(`Modulus: ${a % b}`); // 0
+ 
+// Assignment Operators
+let c = 20;
+c += 10; // c = c + 10
+console.log(`Assignment (+=): ${c}`); // 30
+ 
+c -= 5; // c = c - 5
+console.log(`Assignment (-=): ${c}`); // 25
+ 
+// Comparison Operators
+console.log(`Equal: ${a == b}`); // false
+console.log(`Not Equal: ${a != b}`); // true
+console.log(`Strict Equal: ${a === b}`); // false
+console.log(`Strict Not Equal: ${a !== b}`); // true
+console.log(`Greater Than: ${a > b}`); // true
+console.log(`Less Than: ${a < b}`); // false
+ 
+// Logical Operators
+let x = true;
+let y = false;
+ 
+console.log(`Logical AND: ${x && y}`); // false
+console.log(`Logical OR: ${x || y}`); // true
+console.log(`Logical NOT: ${!x}`); // false
+ 
+// Template Literals
+let firstName = "John";
+let lastName = "Doe";
+let age = 30;
+ 
+let greeting = `Hello, my name is ${firstName} ${lastName} and I am ${age} years old.`;
+console.log(greeting);
+ 
+// Ternary Operator
+let isAdult = age >= 18 ? "Yes" : "No";
+console.log(`Is adult: ${isAdult}`); // Yes
+ 
+// Typeof Operator
+console.log(`Type of firstName: ${typeof firstName}`); // string
+console.log(`Type of age: ${typeof age}`); // number
+ 
+// Bitwise Operators
+let bitwiseA = 5; // 0101 in binary
+let bitwiseB = 3; // 0011 in binary
+ 
+console.log(`Bitwise AND: ${bitwiseA & bitwiseB}`); // 1 (0001)
+console.log(`Bitwise OR: ${bitwiseA | bitwiseB}`); // 7 (0111)
+console.log(`Bitwise XOR: ${bitwiseA ^ bitwiseB}`); // 6 (0110)
+ 
+// Template Literals with Expressions
+let num1 = 8;
+let num2 = 4;
+let result = `The sum of ${num1} and ${num2} is ${num1 + num2}.`;
+console.log(result);
+</script>
+</body>
+</html>

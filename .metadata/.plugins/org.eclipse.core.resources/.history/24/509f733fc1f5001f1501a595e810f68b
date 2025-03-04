@@ -1,0 +1,14 @@
+// app.js
+import { add, sub, PI } from './math.js';
+import { add as sum, sub as difference } from './math.js';
+import greet from './utility.js';
+import * as MathUtils from './math.js';
+
+console.log(add(23, 34)); // Output: 57
+console.log(sub(23, 34)); // Output: -11
+console.log(PI); // Output: 3.142
+
+console.log(sum(23, 34)); // Output: 57
+console.log(difference(23, 34)); // Output: -11
+console.log(greet("Afroz")); // Output: Hello, Afroz
+console.log(MathUtils.add(23, 23)); // Output: 46

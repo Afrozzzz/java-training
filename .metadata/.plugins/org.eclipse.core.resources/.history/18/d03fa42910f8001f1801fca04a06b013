@@ -1,0 +1,111 @@
+//package com.onlinebookshop.shop.controller;
+// 
+//import java.util.List;
+// 
+//import org.springframework.stereotype.Controller;
+//import org.springframework.web.bind.annotation.GetMapping;
+//import org.springframework.web.bind.annotation.RequestMapping;
+//import org.springframework.web.bind.annotation.ResponseBody;
+// 
+//import com.onlinebookshop.shop.model.Book;
+//import com.onlinebookshop.shop.service.BookService;
+// 
+//@Controller
+//@RequestMapping("/api")
+//public class BookController {
+//	private BookService bookService;
+//	public BookController(BookService bookService) {
+//		this.bookService = bookService;
+//	}
+//	@GetMapping("/books")
+//	@ResponseBody
+//	public List<Book> fetchBooks(){
+//		return bookService.getAllBooks();
+//	}
+//		@GetMapping
+//		public String showBooks() {
+//			return "redirect:/books.html";
+//		}
+//
+////fetch book by id
+// 
+//}
+
+
+package com.onlinebookshop.shop.controller;
+
+import java.util.List;
+
+import org.springframework.http.ResponseEntity;
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
+
+import com.onlinebookshop.shop.model.Book;
+import com.onlinebookshop.shop.service.BookService;
+
+@Controller
+@RequestMapping("/api")
+public class BookController {
+
+	function addBook() {
+
+	    const title = document.getElementById('title').value;
+
+	    const price = document.getElementById('price').value;
+
+	    const authorId = document.getElementById('authorId').value;
+	 
+	    if (title && price && authorId) {
+
+	        const book = {
+
+	            title: title,
+
+	            price: price,
+
+	            authorId: authorId
+
+	        };
+	 
+	        fetch('/api/books', {
+
+	            method: 'POST',
+
+	            headers: {
+
+	                'Content-Type': 'application/json'
+
+	            },
+
+	            body: JSON.stringify(book)
+
+	        })
+
+	        .then(response => response.text())
+
+	        .then(data => {
+
+	            alert(data);
+
+	        })
+
+	        .catch(error => {
+
+	            console.error('Error:', error);
+
+	        });
+
+	    } else {
+
+	        alert('Please fill in all fields.');
+
+	    }
+
+	}
+}
+

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+<h1 id="heading">Welcome to JavaScript</h1>
+<p class="message">Welcome to JavaScript, Welcome to JavaScript, Welcome to JavaScript</p>
+<button id="btn">Click Here</button>
+
+<script>
+function fetchData() {
+    return new Promise((resolve, reject) => {
+        console.log("Fetching data...");
+        setTimeout(() => {
+            let success = true;
+            if (success) {
+                resolve({name: "Tanuj", age: 25});
+            } else {
+                reject("Error: Failed to fetch data");
+            }
+        }, 3000);
+    });
+}
+
+fetchData()
+    .then((data) => {
+        console.log("Processing Data...", data);
+    })
+    .catch((error) => {
+        console.log(error);
+    });
+
+</script>
+</body>
+</html>

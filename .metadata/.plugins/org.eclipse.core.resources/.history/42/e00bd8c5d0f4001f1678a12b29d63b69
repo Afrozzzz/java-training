@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>JavaScript Example</title>
+</head>
+<body>
+<h2>JavaScript Array Methods</h2>
+<script>
+let numbers = [10, 20, 30, 40, 50];
+let gadgets = ["laptop", "smartphone", "tv"];
+ 
+// Array Methods
+ 
+// Push: Add an element to the end of the array
+numbers.push(60);
+console.log(`After push: ${numbers}`); // [10, 20, 30, 40, 50, 60]
+ 
+// Pop: Remove the last element from the array
+numbers.pop();
+console.log(`After pop: ${numbers}`); // [10, 20, 30, 40, 50]
+ 
+// Shift: Remove the first element from the array
+numbers.shift();
+console.log(`After shift: ${numbers}`); // [20, 30, 40, 50]
+ 
+// Unshift: Add an element to the beginning of the array
+numbers.unshift(10);
+console.log(`After unshift: ${numbers}`); // [10, 20, 30, 40, 50]
+ 
+// IndexOf: Find the index of an element in the array
+let index = gadgets.indexOf("smartphone");
+console.log(`Index of smartphone: ${index}`); // 1
+ 
+// Splice: Remove elements from an array
+gadgets.splice(1, 1); // Removes "smartphone"
+console.log(`After splice: ${gadgets}`); // ["laptop", "tv"]
+ 
+// Concat: Merge two arrays
+let combined = numbers.concat(gadgets);
+console.log(`Combined array: ${combined}`); // [10, 20, 30, 40, 50, "laptop", "tv"]
+numbers.reverse();
+console.log(`After reverse: ${numbers}`); // [50, 40, 30, 20, 10]
+ 
+// Slice: Extract a section of the array
+let slicedNumbers = numbers.slice(1, 3);
+console.log(`Sliced numbers: ${slicedNumbers}`); // [40, 30]
+ 
+// Sort: Sort the elements of the array
+gadgets.sort();
+console.log(`Sorted gadgets: ${gadgets}`); // ["laptop", "smartphone", "tv"]
+ 
+</script>
+</body>
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Welcome to Online Book Shop</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <h1>Welcome to Online Book Shop</h1>
+    <table>
+        <thead>
+            <tr>
+                <th>BookID</th>
+                <th>Title</th>
+                <th>Author</th>
+                <th>Price</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>1</td>
+                <td>Rich Dad Poor Dad</td>
+                <td>Robert T. Kiyosaki</td>
+                <td>$15.99</td>
+            </tr>
+            <tr>
+                <td>2</td>
+                <td>The Intelligent Investor</td>
+                <td>Benjamin Graham</td>
+                <td>$22.99</td>
+            </tr>
+            <tr>
+                <td>3</td>
+                <td>Think and Grow Rich</td>
+                <td>Napoleon Hill</td>
+                <td>$12.99</td>
+            </tr>
+        </tbody>
+    </table>
+</body>
+</html>

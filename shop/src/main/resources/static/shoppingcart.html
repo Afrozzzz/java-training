@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Shopping Cart</title>
+</head>
+<body>
+<h1>Shopping cart receipt</h1>
+<script>
+        // Define the array of cart items
+        const cartItems = [
+            { name: "tablet", price: 30000, quantity: 1 },
+            { name: "smartwatch", price: 15000, quantity: 2 },
+            { name: "earbuds", price: 5000, quantity: 3 }
+        ];
+ 
+        function generateReceipt(cart) {
+            let total = 0;
+            let receipt = "Receipt:\n\n";
+ 
+            cart.forEach(item => {
+                const itemTotal = item.price * item.quantity;
+                total += itemTotal;
+                receipt += `${item.name}: ₹${itemTotal}\n`;
+            });
+ 
+            receipt += `\nTotal Price: ₹${total}`;
+            return receipt;
+        }
+ 
+        const receipt = generateReceipt(cartItems);
+        console.log(receipt);
+</script>
+</body>
+</html>

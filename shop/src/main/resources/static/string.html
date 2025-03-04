@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript String Methods</title>
+</head>
+<body>
+    <h1>JavaScript String Methods Example</h1>
+    <script>
+        let str = "   Hello, World!   ";
+
+        console.log("Length of the string:", str.length); // Output: 18
+
+        let lowerStr = str.toLowerCase();
+        console.log("Lowercase string:", lowerStr); // Output: "   hello, world!   "
+
+        let trimmedStr = str.trim();
+        console.log("Trimmed string:", trimmedStr); // Output: "Hello, World!"
+
+        let slicedStr = trimmedStr.slice(0, 5);
+        console.log("Sliced string:", slicedStr); // Output: "Hello"
+
+        let replacedStr = trimmedStr.replace("World", "JavaScript");
+        console.log("Replaced string:", replacedStr); // Output: "Hello, JavaScript!"
+
+        let splitStr = trimmedStr.split(", ");
+        console.log("Split string:", splitStr); // Output: ["Hello", "World!"]
+    </script>
+</body>
+</html>

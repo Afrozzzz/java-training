@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Hotel Management</title>
+</head>
+<body>
+<script>
+const hotelRooms = [
+    { type: "Standard", price: 5000, available: true },
+    { type: "Deluxe", price: 7000, available: false },
+    { type: "Suite", price: 10000, available: true },
+    { type: "Economy", price: 3000, available: true },
+    { type: "Penthouse", price: 15000, available: false }
+];
+ 
+function findAvailableRooms(rooms, minPrice, maxPrice) {
+    return rooms
+        .filter(room => room.available && room.price >= minPrice && room.price <= maxPrice)
+        .map(room => ({ type: room.type, price: room.price }));
+}
+ 
+const availableRooms = findAvailableRooms(hotelRooms, 5000, 10000);
+console.log(availableRooms);
+
+</script>
+</body>
+</html>

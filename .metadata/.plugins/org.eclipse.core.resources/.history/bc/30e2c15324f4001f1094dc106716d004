@@ -1,0 +1,20 @@
+package com.onlinebookshop.shop.aspect;
+
+import org.aspectj.lang.annotation.Aspect;
+import org.aspectj.lang.annotation.Before;
+
+@Aspect
+@Component
+public class LoggingAspect {
+//service package -> services
+	//before the methods get called
+	//print (Logging ->
+	//execution point
+	//(* -> tells any return type
+	//service* -> any class inside the service package
+	//.*(--))-> 
+	@Before("execution(* com.onlinebookshop.service.*.*(--))")
+	public void beforeServiceMethod() {
+		System.out.println("-------Logging From Aspect : Method called in Service Layer-------");
+	}
+}

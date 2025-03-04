@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Student Report Card</title>
+</head>
+<body>
+<h1>Student report card</h1>
+<script>
+const students = [
+    { name: "Afroz", marks: { math: 85, science: 90, english: 78, history: 88, geography: 92 } },
+    { name: "Zoya", marks: { math: 92, science: 88, english: 81, history: 85, geography: 89 } },
+    { name: "Rehan", marks: { math: 75, science: 80, english: 70, history: 72, geography: 78 } },
+    { name: "Ravi", marks: { math: 89, science: 84, english: 76, history: 80, geography: 86 } }
+];
+
+function generateReportCard(students) {
+    let reportCard = "Report Card:\n\n";
+
+    students.forEach(student => {
+        const totalMarks = Object.values(student.marks).reduce((sum, mark) => sum + mark, 0);
+        const averageMarks = totalMarks / Object.keys(student.marks).length;
+        const percentage = (totalMarks / (Object.keys(student.marks).length * 100)) * 100;
+
+        reportCard += `Name: ${student.name}\n`;
+        reportCard += `Math: ${student.marks.math}\n`;
+        reportCard += `Science: ${student.marks.science}\n`;
+        reportCard += `English: ${student.marks.english}\n`;
+        reportCard += `History: ${student.marks.history}\n`;
+        reportCard += `Geography: ${student.marks.geography}\n`;
+        reportCard += `Total Marks: ${totalMarks}\n`;
+        reportCard += `Average Marks: ${averageMarks.toFixed(2)}\n`;
+        reportCard += `Percentage: ${percentage.toFixed(2)}%\n`;
+        reportCard += '\n';
+    });
+
+    return reportCard;
+}
+
+const reportCard = generateReportCard(students);
+console.log(reportCard);
+</script>
+</body>
+</html>

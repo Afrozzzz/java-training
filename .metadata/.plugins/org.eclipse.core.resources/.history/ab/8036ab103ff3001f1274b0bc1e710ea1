@@ -1,0 +1,27 @@
+spring.application.name=EMS
+
+# Address Configuration
+address.street=123 Main Street
+address.city=New Delhi
+address.state=Delhi
+address.zipcode=123456
+
+# Department Configuration
+department.deptId=101  # Corrected from 'department.id' to 'department.deptId'
+department.deptName=IT  # Corrected from 'department.name' to 'department.deptName'
+
+# Employee Configuration
+employee.id=1  # Make sure this line is added
+employee.name=Afroz
+employee.email=afroz@gmail.com
+employee.phone=1234567890
+employee.salary=50000
+employee.designation=Software Engineer
+employee.skills=java,SQL.Spring  # Incorrect format might cause issues, should be corrected in code
+
+# Performance Configuration
+performance.employeeId=1
+performance.rating=4.8
+performance.feedback=Good
+performance.projectsHandled=projectA,projectB  # Correct format
+performance.eligibleForPromotion=true

@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+
+	xsi:schemaLocation="
+http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd"><!-- bean definitions here -->
+<bean id="address" class="com.ems.EMS.model.Address">
+<property name="street" value="123 Main st."></property>
+<property name="city" value="New Delhi"></property>
+<property name="state" value=" Delhi"></property>
+<property name="zipcode" value="1/436 -2-1"></property>
+</bean>
+<bean id="department" class="com.ems.EMS.model.Department">
+<constructor-arg value="101"></constructor-arg>
+<constructor-arg value="IT"></constructor-arg>
+</bean>
+
+<bean id="employee" class="com.ems.EMS.model.Employee">
+<constructor-arg value="1"></constructor-arg>
+<constructor-arg value="Vamshi"></constructor-arg>
+<constructor-arg value="vamshi@gmail.com"></constructor-arg>
+<constructor-arg value="1234567"></constructor-arg>
+<constructor-arg value="100000"></constructor-arg>
+<constructor-arg value="software Engineer"></constructor-arg>
+<constructor-arg ref="address"></constructor-arg>
+<constructor-arg ref="department"></constructor-arg>
+<constructor-arg>
+<list>
+<value>Java</value>
+<value>MySql</value>
+<value>SpringFramework</value>
+</list>
+</constructor-arg>
+</bean>
+<bean id="employee1" class="com.ems.EMS.model.Employee">
+<constructor-arg value="1"></constructor-arg>
+<constructor-arg value="Afroz"></constructor-arg>
+<constructor-arg value="afroz@gmail.com"></constructor-arg>
+<constructor-arg value="1239877"></constructor-arg>
+<constructor-arg value="200000"></constructor-arg>
+<constructor-arg value="software Engineer"></constructor-arg>
+<constructor-arg ref="address"></constructor-arg>
+<constructor-arg ref="department"></constructor-arg>
+<constructor-arg>
+<list>
+<value>Java</value>
+<value>MySql</value>
+<value>SpringFramework</value>
+</list>
+</constructor-arg>
+</bean>
+<bean id="payroll" class="com.ems.EMS.model.payRoll">
+<property name="employeeId" value="1"></property>
+<property name="baseSalary" value="50000"></property>
+<property name="bonuses" value="10000"></property>
+<property name="deductions" value="5000"></property>
+</bean>
+<bean id="performance" class="com.ems.EMS.model.performance">
+<constructor-arg value="#{employee.id}"/>
+<constructor-arg value="4.5"/>
+<constructor-arg value="Excellent performance"/>
+<constructor-arg>
+<list>
+<value>Project A</value>
+<value>Project B</value>
+</list>
+</constructor-arg>
+<constructor-arg value="true"/>
+</bean>
+ 
+    
+
+ 
+    <bean id="hr" class="com.ems.EMS.model.HR">
+<property name="employeeRecords">
+<map>
+<entry key="1" value-ref="employee"/>
+<entry key="2" value-ref="employee1"/>
+</map>
+</property>
+</bean>
+
+</beans>
+ 

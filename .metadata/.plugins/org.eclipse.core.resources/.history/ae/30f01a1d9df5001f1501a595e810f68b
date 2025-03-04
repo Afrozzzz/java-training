@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+<h1 id="heading">Welcome to JavaScript</h1>
+<p class="message">Welcome to JavaScript, Welcome to JavaScript, Welcome to JavaScript</p>
+<button id="btn">Click Here</button>
+
+<script>
+function fetchData() {
+    return new Promise((resolve, reject) => {
+        console.log("Fetching data...");
+        setTimeout(() => {
+            let success = true;
+            if (success) {
+                resolve({name: "Tanuj", age: 25});
+            } else {
+                reject("Error: Failed to fetch data");
+            }
+        }, 3000);
+    });
+}
+//using th epromise
+async function getData(){
+	
+	console.log("Fetching info......");
+	
+	try{
+		let data = await fetchData();
+		console.log("processing data:",data);
+		let updatedData = { ...data, city: "ND" };
+
+		  console.log("Processing updated data", updatedData);
+		  let updatedData = { ...data, city: "ND" };
+		  console.log("Processing updated data..", updatedData);
+		
+	}
+	catch(error){
+		console.log("Error:",error);
+		
+	}
+}
+getData();
+//fetch API -> promise
+
+function fetchUserData(){
+	//make the GET request
+	fetch("https://jsonplaceholder.typicode.com/users")
+	.then((response)=>{
+		if(response.ok){
+			throw new Error("Http error : status : ${response.status}");
+			
+		}
+		return response.json();
+		
+	})
+	.then((data)=>{
+		console.log("Users Data :",data);
+		
+	})
+	.catch((error)=>{
+		console.log("Error :",error);
+	});
+	
+}
+fetchUserData();
+
+
+</script>
+</body>
+</html>

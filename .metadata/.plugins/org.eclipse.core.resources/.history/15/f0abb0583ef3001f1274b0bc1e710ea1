@@ -1,0 +1,124 @@
+package com.ems.EMS.model;
+
+import java.util.Arrays;
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.ComponentScan;
+import org.springframework.context.annotation.Configuration;
+import org.springframework.context.annotation.PropertySource;
+
+@Configuration
+@ComponentScan(basePackages = "com.ems.EMS")
+@PropertySource("classpath:application.properties")
+public class emsAppConfig {
+
+    @Value("${address.street}")
+    private String street;
+
+    @Value("${address.city}")
+    private String city;
+
+    @Value("${address.state}")
+    private String state;
+
+    @Value("${address.zipcode}")
+    private String zipcode;
+
+    @Bean
+    public Address address() {
+        Address address = new Address();
+        address.setStreet(street);
+        address.setCity(city);
+        address.setState(state);
+        address.setZipcode(zipcode);
+        return address;
+    }
+
+    @Value("${department.deptId}")
+    private int deptId;
+
+    @Value("${department.deptName}")
+    private String deptName;
+
+    @Bean
+    public Department department() {
+        Department department = new Department();
+        department.setDeptId(deptId);
+        department.setDeptName(deptName);
+        return department;
+    }
+
+    @Value("${employee.skills}")
+    private String skills;
+
+    @Bean
+    public List<String> skills() {
+        return Arrays.asList(skills.split(","));
+    }
+
+    @Value("${employee.id}")
+    private int id;
+
+    @Value("${employee.name}")
+    private String name;
+
+    @Value("${employee.email}")
+    private String email;
+
+    @Value("${employee.phone}")
+    private String phone;
+
+    @Value("${employee.salary}")
+    private double salary;
+
+    @Value("${employee.designation}")
+    private String designation;
+
+    @Bean
+    public Employee employee() {
+        Employee employee = new Employee();
+        employee.setId(id);
+        employee.setName(name);
+        employee.setEmail(email);
+        employee.setPhone(phone);
+        employee.setSalary(salary);
+        employee.setDesignation(designation);
+        employee.setAddress(address());
+        employee.setDepartment(department());
+        employee.setSkills(skills());
+        return employee;
+    }
+
+    @Value("${performance.projectsHandled}")
+    private String projectsHandled;
+
+    @Bean
+    public List<String> projectsHandled() {
+        return Arrays.asList(projectsHandled.split(","));
+    }
+
+    @Value("${performance.employeeId}")
+    private int employeeId;
+
+    @Value("${performance.rating}")
+    private double rating;
+
+    @Value("${performance.feedback}")
+    private String feedback;
+
+    @Value("${performance.eligibleForPromotion}")
+    private boolean eligibleForPromotion;
+
+    @Bean
+    public Performance performance() {
+        Performance performance = new Performance();
+        performance.setEmployeeId(employeeId);
+        performance.setRating(rating);
+        performance.setFeedback(feedback);
+        performance.setProjectsHandled(projectsHandled());
+        performance.setEligibleForPromotion(eligibleForPromotion);
+        return performance;
+    }
+}

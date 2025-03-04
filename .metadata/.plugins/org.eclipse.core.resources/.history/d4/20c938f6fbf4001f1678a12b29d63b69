@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Online Book Shop</title>
+</head>
+<body>
+<h1 id="heading">Welcome </h1>
+<p class="message">This is a paragraph.</p>
+<button id="btn">Click Here</button>
+ 
+</body>
+<script type="text/javascript">
+ 
+const heading = document.getElementById('heading');
+ 
+const message = document.getElementsByClassName('message')[0];
+const tags = document.getElementsByTagName('h1')[0];
+ 
+heading.style.color = 'blue';
+ 
+message.textContent = 'This is an updated paragraph.';
+tags.style.fontSize = '24px';
+ 
+const button = document.getElementById('btn');
+button.addEventListener('click', () => {
+    alert('Button clicked!');
+});
+</script>
+</html>

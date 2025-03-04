@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>JavaScript String Methods</title>
+</head>
+<body>
+<h1>JavaScript object methods example</h1>
+<script>
+let person = {
+    name: "Jane Smith",
+    age: 30,
+    city: "Los Angeles"
+};
+ 
+console.log("Original object:", person);
+ 
+person.age = 31;
+console.log("Updated age:", person);
+ 
+delete person.city;
+console.log(" deleting city:", person);
+ 
+let additionalInfo = {
+    occupation: "Data Scientist",
+    country: "Canada"
+};
+ 
+let mergedPerson = { ...person, ...additionalInfo };
+console.log("Merged object:", mergedPerson);
+ 
+</script>
+</body>
+</html>
